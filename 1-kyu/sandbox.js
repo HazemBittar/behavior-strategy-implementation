@@ -1,21 +1,63 @@
-/**
- * Returns a new number with squared digits
- * Time complexity: O(n), space complexity: O(n)
- * @param {Number} num an integer
- * @returns {Number} an integer with squared digits
- */
-const squareDigits = num => {
-    // Get an array of digits
-    const digits = num.toString().split('')
+// util function to convert the input to string type
+function convertToString(input) {
+  
+    if(input) { 
+      
+         if(typeof input === "string") {
 
-    // Square each digit. Because JavaScript has 
-    // automatic type coercion, it will quietly convert each string
-    // into a number to perform multiplication
-    const squaredDigits = digits.map(n => n * n)
+              return input;
+          }
+        
+         return String(input);
+    }
+    return '';
+}
 
-    // Join each digit together, then use the + operator 
-    // to convert the string into a number
-    const squaredNumber = squaredDigits.join('')
 
-    return +squaredNumber
+// convert string to words
+function toWords(input) {							
+
+ input = convertToString(input);
+ 
+ var regex = /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g;
+ 
+ return input.match(regex);
+
+}
+
+
+// convert the input array to camel case
+function toCamelCase(inputArray) {
+
+  let result = "";
+
+  for(let i = 0 , len = inputArray.length; i < len; i++) {
+
+    let currentStr = inputArray[i];
+  
+    let tempStr = currentStr.toLowerCase();
+
+    if(i != 0) {
+  
+      // convert first letter to upper case (the word is in lowercase) 
+        tempStr = tempStr.substr(0, 1).toUpperCase() + tempStr.substr(1);
+
+     }
+    
+     result +=tempStr;
+    
+  }
+
+  return result;
+}
+
+
+// this function call all other functions
+
+function toCamelCaseString(input) {						
+
+let words = toWords(input);
+
+return toCamelCase(words);
+
 }
