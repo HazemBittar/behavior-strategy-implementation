@@ -9,16 +9,14 @@ In this kata, Complete the method/function so that it converts dash/underscore d
 
 ### Parameters
 
-**string**: `num`
+**string**: `str`
 
-- The function accepts an integer number.
+- The function accepts an string.
 
 ### Return Value: `string`
 
- and returns an integer
+ and returns an string
 ## Examples
-For this problem, we're given an integer (no decimals). We need to return a new number, where every digit is squared. 
-For example, if we're given the number 9119, we would return 811181, since the 9^2 = 81, and 1^2 = 1. We need to make sure that we return an integer afterwards. You'll see why down below.
 
 ```js
 toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
@@ -97,4 +95,4 @@ function toCamelCase(inputArray) {
 
 ## Notes
 
-* By practice this keta helped my to know about RegEx to conver string to camel case.
+* By practice this kata helped my to know about RegEx to convert string to camel case.
