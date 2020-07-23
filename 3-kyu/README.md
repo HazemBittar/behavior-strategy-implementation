@@ -1,4 +1,4 @@
-# 3 kyu
+# 2 kyu
 # [Format a string of names.](https://www.codewars.com/kata/53368a47e38700bd8300030d/solutions/javascript)
 
 In this kata, Given: an array containing hashes of names
